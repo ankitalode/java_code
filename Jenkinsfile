@@ -6,8 +6,9 @@ pipeline {
         sh 'pwd'
 	sh 'ls -ltr'
         sh 'mvn --version'
-	sh 'cd /var/lib/jenkins/workspace'
-	sh 'ls -ltr'
+	sh 'cd src'
+	sh 'mvn clean install'
+	sh 'java -jar target/gs-maven-0.1.0.jar'
       }
     }
   }
