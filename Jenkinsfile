@@ -6,10 +6,9 @@ pipeline {
         sh 'pwd'
 	sh 'ls -ltr'
         sh 'mvn --version'
-	sh 'cd src/'
-	sh 'ls -ltr'
-	sh 'mvn clean install'
-	sh 'java -jar target/gs-maven-0.1.0.jar'
+	sh 'mvn -f src/pom.xml clean install'
+	sh 'ls src/target/'
+	sh 'java -jar src/target/gs-maven-0.1.0.jar'
       }
     }
   }
